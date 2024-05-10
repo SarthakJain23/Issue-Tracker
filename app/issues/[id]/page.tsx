@@ -15,7 +15,6 @@ const IssueDetailPage = async ({ params }: Props) => {
   });
 
   if (!issue) notFound();
-
   return (
     <div>
       <Heading>{issue.title}</Heading>
@@ -31,4 +30,3 @@ const IssueDetailPage = async ({ params }: Props) => {
 };
 
 export default IssueDetailPage;
- 
