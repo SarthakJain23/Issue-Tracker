@@ -31,3 +31,4 @@ const IssueDetailPage = async ({ params }: Props) => {
 };
 
 export default IssueDetailPage;
+ 
