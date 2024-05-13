@@ -28,7 +28,7 @@ const DeleteIssueButton = ({ issueId }: { issueId: number }) => {
               Revoke access
             </Button>
           </AlertDialog.Action>
-        </Flex> 
+        </Flex>
       </AlertDialog.Content>
     </AlertDialog.Root>
   );
