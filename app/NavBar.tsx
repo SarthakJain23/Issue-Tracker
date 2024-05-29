@@ -13,6 +13,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiFillBug } from "react-icons/ai";
+import Skeleton from "@/app/components/Skeleton";
 
 const NavBar = () => {
   return (
@@ -47,7 +48,7 @@ const NavLinks = () => {
           <Link
             className={classNames({
               "nav-link": true,
-              "! text-zinc-900": currentPath === link.href,
+              "!text-zinc-900": currentPath === link.href,
             })}
             href={link.href}
           >
@@ -62,7 +63,7 @@ const NavLinks = () => {
 const AuthStatus = () => {
   const { data: session, status } = useSession();
 
-  if (status === "loading") return null;
+  if (status === "loading") return <Skeleton width="3rem" />;
   if (status === "unauthenticated")
     return (
       <Link className="nav-link" href="/api/auth/signin">
@@ -75,6 +76,7 @@ const AuthStatus = () => {
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <Avatar
+            radius="full"
             size={"2"}
             className="cursor-pointer"
             src={session!.user!.image!}
