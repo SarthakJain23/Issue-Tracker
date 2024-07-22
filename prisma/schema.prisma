@@ -20,7 +20,7 @@ model Issue {
   assignedToUserId String?  @db.VarChar(255)
   assignedToUser   User?    @relation(fields: [assignedToUserId], references: [id])
 }
-
+  
 enum Status {
   OPEN
   IN_PROGRESS
